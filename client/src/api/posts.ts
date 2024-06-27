@@ -6,7 +6,7 @@ export function getPosts() {
 		.then((res) => res.data)
 }
 
-export function getPostsPaginated(page) {
+export function getPostsPaginated(page: number) {
 	return axios
 		.get("http://localhost:3000/posts", {
 			params: { _page: page, _sort: "title", _limit: 2 }
@@ -21,11 +21,11 @@ export function getPostsPaginated(page) {
 		})
 }
 
-export function getPost(id) {
+export function getPost(id: any) {
 	return axios.get(`http://localhost:3000/posts/${id}`).then((res) => res.data)
 }
 
-export function createPost({ title, body }) {
+export function createPost({ title, body }: { title: any; body: any }) {
 	return axios
 		.post("http://localhost:3000/posts", {
 			title,

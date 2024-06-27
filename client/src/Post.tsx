@@ -2,7 +2,7 @@ import { getPost } from "./api/posts"
 import { getUser } from "./api/users"
 import { useQuery } from "@tanstack/react-query"
 
-export default function Post({ id }) {
+export default function Post({ id }: { id: any }) {
 	const postQuery = useQuery({
 		queryKey: ["post", id],
 		queryFn: () => getPost(id)
